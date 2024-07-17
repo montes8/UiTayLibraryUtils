@@ -17,11 +17,11 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.gb.vale.uitaylibrarycompose.model.UiTayModifierModel
+import com.gb.vale.uitaylibrarycompose.model.UiTayToolBarModel
 
 @Composable
 fun UiTayCToolBar(
-    uiTayModifier : UiTayModifierModel = UiTayModifierModel(),
+    uiTayModifier : UiTayToolBarModel = UiTayToolBarModel(),
     uiTayClick: (Boolean) -> Unit
 ) {
     Box (modifier = Modifier.height(uiTayModifier.uiTayHeight.dp).background(colorResource(uiTayModifier.uiTayBackground))

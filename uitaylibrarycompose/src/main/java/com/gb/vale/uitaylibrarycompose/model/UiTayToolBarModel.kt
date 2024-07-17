@@ -4,7 +4,7 @@ import androidx.compose.ui.text.style.TextAlign
 import com.gb.vale.uitaylibrarycompose.R
 import com.gb.vale.uitaylibrarycompose.utils.UI_TAY_TEXT_DEFAUL
 
-class UiTayModifierModel (
+class UiTayToolBarModel (
     var uiTayHeight : Int = 56,
     var uiTayBackground : Int = R.color.ui_tay_black,
     var uiTayTextColor: Int = R.color.ui_tay_white,
