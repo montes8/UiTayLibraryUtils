@@ -2,4 +2,5 @@
 <resources>
     <color name="ui_tay_black">#FF000000</color>
     <color name="ui_tay_white">#FFFFFFFF</color>
+    <color name="ui_tay_gray">#FF444444</color>
 </resources>
