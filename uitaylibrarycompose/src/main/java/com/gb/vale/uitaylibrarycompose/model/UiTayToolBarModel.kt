@@ -2,7 +2,6 @@ package com.gb.vale.uitaylibrarycompose.model
 
 import androidx.compose.ui.text.style.TextAlign
 import com.gb.vale.uitaylibrarycompose.R
-import com.gb.vale.uitaylibrarycompose.utils.UI_TAY_TEXT_DEFAUL
 
 class UiTayToolBarModel (
     var uiTayHeight : Int = 56,
@@ -18,7 +17,6 @@ class UiTayToolBarModel (
     var uiTayIconMarginEnd : Int = 0,
     var uiTayTextFont : Int = R.font.ui_tay_c_tb,
     var uiTayTextPosition : TextAlign = TextAlign.Center,
-    var uiTayText : String = UI_TAY_TEXT_DEFAUL,
     var uiTayTypeStart : Boolean = true,
     var uiTayTypeEnd : Boolean = true
 )

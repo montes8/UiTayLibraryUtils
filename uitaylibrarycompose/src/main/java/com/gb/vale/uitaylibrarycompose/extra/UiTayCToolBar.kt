@@ -17,12 +17,14 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+
 import com.gb.vale.uitaylibrarycompose.model.UiTayToolBarModel
+import com.gb.vale.uitaylibrarycompose.utils.UI_TAY_TEXT_DEFAUL
 
 @Composable
-fun UiTayCToolBar(
-    uiTayModifier : UiTayToolBarModel = UiTayToolBarModel(),
-    uiTayClick: (Boolean) -> Unit
+fun UiTayCToolBar(uiTayText : String = UI_TAY_TEXT_DEFAUL,
+                  uiTayModifier : UiTayToolBarModel = UiTayToolBarModel(),
+                  uiTayClick: (Boolean) -> Unit
 ) {
     Box (modifier = Modifier.height(uiTayModifier.uiTayHeight.dp).background(colorResource(uiTayModifier.uiTayBackground))
     ,contentAlignment = Alignment.CenterStart
@@ -36,7 +38,7 @@ fun UiTayCToolBar(
                     tint = colorResource(uiTayModifier.uiTayTintStart))
             }
         }
-        Text(text = uiTayModifier.uiTayText,modifier = Modifier.fillMaxWidth().padding(
+        Text(text = uiTayText,modifier = Modifier.fillMaxWidth().padding(
             start = uiTayModifier.uiTayTextMarginHorizontal.dp,
             end = uiTayModifier.uiTayTextMarginHorizontal.dp), color = colorResource(uiTayModifier.uiTayTextColor),
             textAlign = uiTayModifier.uiTayTextPosition,
