@@ -15,7 +15,7 @@ class UiTayToolBarModel (
     var uiTayTextMarginHorizontal : Int = 0,
     var uiTayIconMarginStar : Int = 0,
     var uiTayIconMarginEnd : Int = 0,
-    var uiTayTextFont : Int = R.font.ui_tay_c_tb,
+    var uiTayTextFont : Int = R.font.ui_tay_font_tb,
     var uiTayTextPosition : TextAlign = TextAlign.Center,
     var uiTayTypeStart : Boolean = true,
     var uiTayTypeEnd : Boolean = true
