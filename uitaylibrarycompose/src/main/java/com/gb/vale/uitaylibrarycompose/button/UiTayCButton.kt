@@ -1,6 +1,5 @@
 package com.gb.vale.uitaylibrarycompose.button
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -31,6 +30,7 @@ fun UiTayCButton(uiTayText : String = UI_TAY_TEXT_DEFAUL, uiTayEnable : Boolean 
                  uiTayBtnModel : UiTayButtonModel = UiTayButtonModel(),
                  uiTayClick: () -> Unit
 ) {
+    var selected by remember { mutableStateOf(false) }
 
     Button(modifier = Modifier
         .height(uiTayBtnModel.uiTayHeight.dp).fillMaxWidth(),
