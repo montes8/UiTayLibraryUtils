@@ -108,10 +108,10 @@ fun UiTaySwitch(isChecked : Boolean = false,
             .clip(RoundedCornerShape(uTModel.uTRadiusCtn.dp))
 
             .border(uTModel.uTSizeStrokeCtn.dp,
-                colorResource(if(isChecked) uTModel.uTBgStrokeSelecedCtn else uTModel.uTBgStrokeUnSelecedCtn)
+                colorResource(if(isChecked) uTModel.uTBgStrokeSelectedCtn else uTModel.uTBgStrokeUnSelectedCtn)
                 ,
                 CircleShape)
-            .background(colorResource(if(isChecked) uTModel.uTBgSelecedCtn else uTModel.uTBgUnSelecedCtn)).uiTayNoRippleClickable{
+            .background(colorResource(if(isChecked) uTModel.uTBgSelectedCtn else uTModel.uTBgUnSelectedCtn)).uiTayNoRippleClickable{
                 uiTayCheckedChange.invoke(!isChecked)
             },
         verticalAlignment = Alignment.CenterVertically,
@@ -123,9 +123,9 @@ fun UiTaySwitch(isChecked : Boolean = false,
                 .size((uTModel.uTHeight - uTModel.uTPadding).dp).padding(uTModel.uTPadding.dp)
                 .clip(CircleShape)
                 .border(uTModel.uTSizeStroke.dp,
-                    colorResource(if(isChecked) uTModel.uTBgStrokeSeleced else uTModel.uTBgStrokeUnSeleced)
+                    colorResource(if(isChecked) uTModel.uTBgStrokeSelected else uTModel.uTBgStrokeUnSelected)
                     , CircleShape)
-                .background( colorResource(if(isChecked) uTModel.uTBgSeleced else uTModel.uTBgUnSeleced))
+                .background( colorResource(if(isChecked) uTModel.uTBgSelected else uTModel.uTBgUnSelected))
         )
     }
 }
