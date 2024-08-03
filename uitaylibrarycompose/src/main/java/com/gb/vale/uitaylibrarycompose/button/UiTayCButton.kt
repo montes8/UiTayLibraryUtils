@@ -5,6 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -32,6 +33,7 @@ import androidx.compose.ui.unit.dp
 import com.gb.vale.uitaylibrarycompose.R
 import com.gb.vale.uitaylibrarycompose.model.UTStyleCButton
 import com.gb.vale.uitaylibrarycompose.model.UiTayButtonModel
+import com.gb.vale.uitaylibrarycompose.model.UiTaySwitchModel
 import com.gb.vale.uitaylibrarycompose.model.uiTayBackground
 import com.gb.vale.uitaylibrarycompose.model.uiTayStroke
 import com.gb.vale.uitaylibrarycompose.model.uiTayTextColor
@@ -65,21 +67,20 @@ fun UiTayCButton(uiTayText : String = UI_TAY_TEXT_DEFAUL, uiTayEnable : Boolean 
 
 }
 
-fun UiTaySwitch(state : Boolean = false,tayClickItem: (Boolean) -> Unit){
-    val checked = remember { mutableStateOf(false) }
-    checked.value = state
+@Composable
+fun UiTaySwitchCustom(isChecked : Boolean = false,
+                      uiTayCheckedChange: (Boolean) -> Unit){
     Row(
         modifier = Modifier
             .height(30.dp)
             .width(70.dp)
-            .padding(end = 16.dp)
             .clip(RoundedCornerShape(30.dp))
             .border(1.dp, Color.Magenta, CircleShape)
             .background(Color.White).uiTayNoRippleClickable{
-                tayClickItem.invoke(!state)
+                uiTayCheckedChange.invoke(!isChecked)
             },
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement= if(checked.value) Arrangement.End else Arrangement.Start
+        horizontalArrangement= if(isChecked) Arrangement.End else Arrangement.Start
 
     ) {
         Image(
@@ -92,6 +93,39 @@ fun UiTaySwitch(state : Boolean = false,tayClickItem: (Boolean) -> Unit){
                 .background(Color.Magenta) ,
             contentDescription = "",
             alignment = Alignment.Center
+        )
+    }
+}
+
+@Composable
+fun UiTaySwitch(isChecked : Boolean = false,
+                uTModel : UiTaySwitchModel = UiTaySwitchModel(),
+                uiTayCheckedChange: (Boolean) -> Unit){
+    Row(
+        modifier = Modifier
+            .height(uTModel.uTHeight.dp)
+            .width(uTModel.uTWidth.dp)
+            .clip(RoundedCornerShape(uTModel.uTRadiusCtn.dp))
+
+            .border(uTModel.uTSizeStrokeCtn.dp,
+                colorResource(if(isChecked) uTModel.uTBgStrokeSelecedCtn else uTModel.uTBgStrokeUnSelecedCtn)
+                ,
+                CircleShape)
+            .background(colorResource(if(isChecked) uTModel.uTBgSelecedCtn else uTModel.uTBgUnSelecedCtn)).uiTayNoRippleClickable{
+                uiTayCheckedChange.invoke(!isChecked)
+            },
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement= if(isChecked) Arrangement.End else Arrangement.Start
+
+    ) {
+        Box(
+            modifier = Modifier
+                .size((uTModel.uTHeight - uTModel.uTPadding).dp).padding(uTModel.uTPadding.dp)
+                .clip(CircleShape)
+                .border(uTModel.uTSizeStroke.dp,
+                    colorResource(if(isChecked) uTModel.uTBgStrokeSeleced else uTModel.uTBgStrokeUnSeleced)
+                    , CircleShape)
+                .background( colorResource(if(isChecked) uTModel.uTBgSeleced else uTModel.uTBgUnSeleced))
         )
     }
 }
