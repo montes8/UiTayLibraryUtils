@@ -26,32 +26,32 @@ fun UiTayCToolBar(uiTayText : String = UI_TAY_TEXT_DEFAUL,
                   uiTayModifier : UiTayToolBarModel = UiTayToolBarModel(),
                   uiTayClick: (Boolean) -> Unit
 ) {
-    Box (modifier = Modifier.height(uiTayModifier.uiTayHeight.dp).background(colorResource(uiTayModifier.uiTayBackground))
+    Box (modifier = Modifier.height(uiTayModifier.uTHeight.dp).background(colorResource(uiTayModifier.uTBgColor))
     ,contentAlignment = Alignment.CenterStart
     ){
-        if (uiTayModifier.uiTayTypeStart){
+        if (uiTayModifier.uTTypeStart){
             IconButton(onClick = {
                 uiTayClick(true)
             },modifier = Modifier
-                .align(Alignment.CenterStart).padding(start = uiTayModifier.uiTayIconMarginStar.dp)) {
-                Icon(painter = painterResource(id = uiTayModifier.uiTayIconStart), contentDescription = "uiTayBackIcon",
-                    tint = colorResource(uiTayModifier.uiTayTintStart))
+                .align(Alignment.CenterStart).padding(start = uiTayModifier.uTIconMarginStar.dp)) {
+                Icon(painter = painterResource(id = uiTayModifier.uTIconStart), contentDescription = "uiTayBackIcon"
+                )
             }
         }
         Text(text = uiTayText,modifier = Modifier.fillMaxWidth().padding(
-            start = uiTayModifier.uiTayTextMarginHorizontal.dp,
-            end = uiTayModifier.uiTayTextMarginHorizontal.dp), color = colorResource(uiTayModifier.uiTayTextColor),
-            textAlign = uiTayModifier.uiTayTextPosition,
-            fontSize = uiTayModifier.uiTayTextSize.sp,
-            fontFamily = FontFamily(Font(uiTayModifier.uiTayTextFont))
+            start = uiTayModifier.uTTextMarginHorizontal.dp,
+            end = uiTayModifier.uTTextMarginHorizontal.dp), color = colorResource(uiTayModifier.uTTextColor),
+            textAlign = uiTayModifier.uTTextPosition,
+            fontSize = uiTayModifier.uTTextSize.sp,
+            fontFamily = FontFamily(Font(uiTayModifier.uTTextFont))
         )
-        if (uiTayModifier.uiTayTypeEnd){
+        if (uiTayModifier.uTTypeEnd){
             IconButton(onClick = {
                 uiTayClick(false)
             }, modifier = Modifier
-                .align(Alignment.CenterEnd).padding(start = uiTayModifier.uiTayIconMarginEnd.dp)) {
-                Icon( painter = painterResource(id = uiTayModifier.uiTayIconEnd), contentDescription =
-                "uiTayMenuIcon",tint = colorResource(uiTayModifier.uiTayTintEnd))
+                .align(Alignment.CenterEnd).padding(start = uiTayModifier.uTIconMarginEnd.dp)) {
+                Icon( painter = painterResource(id = uiTayModifier.uTIconEnd), contentDescription =
+                "uiTayMenuIcon")
             }
         }
 
