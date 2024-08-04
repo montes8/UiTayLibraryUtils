@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
 fun ScreemTest(){
     var enable by remember { mutableStateOf(true) }
     Column {
-        UiTaySwitchCustom (isChecked =enable ){
+        UiTaySwitchCustom (isChecked =enable , uTBgFull = true){
             enable = it
         }
     }

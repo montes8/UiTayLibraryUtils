@@ -70,13 +70,21 @@ fun UiTayCButton(uiTayText : String = UI_TAY_TEXT_DEFAUL, uiTayEnable : Boolean 
 
 @Composable
 fun UiTaySwitchCustom(isChecked : Boolean = false,
+                      uTHeight : Int = 30,
+                      uTWidth : Int = 50,
+                      uTPadding : Int = 2,
+                      uTBgSelected : Int = R.drawable.uic_tay_ic_bg_round,
+                      uTBgUnSelected : Int = R.drawable.uic_tay_ic_bg_round,
+                      uTImgSelected : Int = R.drawable.uic_tay_bg_circle,
+                      uTImgUnSelected : Int = R.drawable.uic_tay_bg_circle,
+                      uTBgFull : Boolean = false,
                       uiTayCheckedChange: (Boolean) -> Unit){
     Row(
         modifier = Modifier
-            .height(30.dp)
-            .width(70.dp)
+            .height(uTHeight.dp)
+            .width(uTWidth.dp)
             .paint(
-                painterResource(id = R.drawable.uic_tay_ic_bg_round),
+                painterResource(id = if(isChecked)uTBgSelected else uTBgUnSelected ),
                 contentScale = ContentScale.FillBounds) .uiTayNoRippleClickable{
                 uiTayCheckedChange.invoke(!isChecked)
             },
@@ -84,15 +92,17 @@ fun UiTaySwitchCustom(isChecked : Boolean = false,
         horizontalArrangement= if(isChecked) Arrangement.End else Arrangement.Start
 
     ) {
-        Image(
-            painter = painterResource(R.drawable.uic_tay_bg_circle),
-            contentScale = ContentScale.Crop,
-            modifier = Modifier
-                .size(28.dp).padding(2.dp)
-                .clip(CircleShape),
-            contentDescription = "",
-            alignment = Alignment.Center
-        )
+        if (!uTBgFull){
+            Image(
+                painter = painterResource(if(isChecked)uTImgSelected else uTImgUnSelected ),
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .size((uTHeight - uTPadding).dp).padding(uTPadding.dp)
+                    .clip(CircleShape),
+                contentDescription = "uiTaySwitchCustom",
+                alignment = Alignment.Center
+            )
+        }
     }
 }
 
