@@ -25,6 +25,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
@@ -74,9 +75,9 @@ fun UiTaySwitchCustom(isChecked : Boolean = false,
         modifier = Modifier
             .height(30.dp)
             .width(70.dp)
-            .clip(RoundedCornerShape(30.dp))
-            .border(1.dp, Color.Magenta, CircleShape)
-            .background(Color.White).uiTayNoRippleClickable{
+            .paint(
+                painterResource(id = R.drawable.uic_tay_ic_bg_round),
+                contentScale = ContentScale.FillBounds) .uiTayNoRippleClickable{
                 uiTayCheckedChange.invoke(!isChecked)
             },
         verticalAlignment = Alignment.CenterVertically,
@@ -88,9 +89,7 @@ fun UiTaySwitchCustom(isChecked : Boolean = false,
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .size(28.dp).padding(2.dp)
-                .clip(CircleShape)                       // clip to the circle shape
-                .border(2.dp, Color.Black, CircleShape)
-                .background(Color.Magenta) ,
+                .clip(CircleShape),
             contentDescription = "",
             alignment = Alignment.Center
         )

@@ -13,6 +13,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import com.gb.vale.uitaylibrarycompose.button.UiTayCButton
 import com.gb.vale.uitaylibrarycompose.button.UiTaySwitch
+import com.gb.vale.uitaylibrarycompose.button.UiTaySwitchCustom
 import com.gb.vale.uitaylibraryutils.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
@@ -34,7 +35,7 @@ class MainActivity : ComponentActivity() {
 fun ScreemTest(){
     var enable by remember { mutableStateOf(true) }
     Column {
-        UiTaySwitch (isChecked =enable ){
+        UiTaySwitchCustom (isChecked =enable ){
             enable = it
         }
     }
