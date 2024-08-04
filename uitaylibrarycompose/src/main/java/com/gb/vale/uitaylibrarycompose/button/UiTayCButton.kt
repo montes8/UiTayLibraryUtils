@@ -51,9 +51,9 @@ fun UiTayCButton(uiTayText : String = UI_TAY_TEXT_DEFAUL, uiTayEnable : Boolean 
     var selected by remember { mutableStateOf(false) }
 
     Button(modifier = Modifier
-        .height(uiTayBtnModel.uiTayHeight.dp).fillMaxWidth(),
-        shape = RoundedCornerShape(uiTayBtnModel.uiTayRadius.dp),
-        border = BorderStroke(uiTayBtnModel.uiTayStrokeWith.dp, colorResource(id =
+        .height(uiTayBtnModel.uTHeight.dp).fillMaxWidth(),
+        shape = RoundedCornerShape(uiTayBtnModel.uTRadius.dp),
+        border = BorderStroke(uiTayBtnModel.uTStrokeWith.dp, colorResource(id =
         uiTayBtnModel.uiTayStroke(uiTayStyleBtn,uiTayEnable.utBtnState()))),
         colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(id =
         uiTayBtnModel.uiTayBackground(uiTayStyleBtn,uiTayEnable.utBtnState())

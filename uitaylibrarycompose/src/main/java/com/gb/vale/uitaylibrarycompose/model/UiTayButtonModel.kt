@@ -3,33 +3,33 @@ package com.gb.vale.uitaylibrarycompose.model
 import com.gb.vale.uitaylibrarycompose.R
 
 class UiTayButtonModel (
-    var uiTayHeight : Int = 48,
-    var uiTayBackground : Int = R.color.ui_tay_black,
-    var uiTayStroke : Int = R.color.ui_tay_black,
-    var uiTayBackgroundDisable : Int = R.color.ui_tay_gray,
-    var uiTayStrokeDisable : Int = R.color.ui_tay_gray,
-    var uiTayBackgroundSelected : Int = R.color.ui_tay_black,
-    var uiTayStrokeSelected : Int = R.color.ui_tay_black,
-    var uiTayBackgroundSecondary : Int = R.color.ui_tay_white,
-    var uiTayStrokeSecondary : Int = R.color.ui_tay_black,
-    var uiTayBackgroundSecondaryDisable : Int = R.color.ui_tay_gray_secondary,
-    var uiTayStrokeSecondaryDisable : Int = R.color.ui_tay_gray,
-    var uiTayBackgroundSecondarySelected : Int = R.color.ui_tay_black,
-    var uiTayStrokeSecondarySelected : Int = R.color.ui_tay_white,
-    var uiTayTextColor: Int = R.color.ui_tay_white,
-    var uiTayTextColorDisable: Int = R.color.ui_tay_white,
-    var uiTayTextColorSelected: Int = R.color.ui_tay_white,
-    var uiTayTextColorSecondary: Int = R.color.ui_tay_black,
-    var uiTayTextColorDisableSecondary: Int = R.color.ui_tay_gray,
-    var uiTayTextColorSelectedSecondary: Int = R.color.ui_tay_black,
-    var uiTayTextFont : Int = R.font.ui_tay_font_button,
-    var uiTayTintStart: Int = R.color.ui_tay_white,
-    var uiTayTintEnd : Int = R.color.ui_tay_white,
-    var uiTayIconStart : Int? = null,
-    var uiTayIconEnd : Int? = null,
-    var uiTayTextSize : Int = 20,
-    var uiTayStrokeWith : Int = 1,
-    var uiTayRadius : Int = 62)
+    var uTHeight : Int = 48,
+    var uTBgColor : Int = R.color.ui_tay_black,
+    var uTStrokeColor : Int = R.color.ui_tay_black,
+    var uTBgDisableColor : Int = R.color.ui_tay_gray,
+    var uTStrokeDisableColor : Int = R.color.ui_tay_gray,
+    var uTBgSelectedColor : Int = R.color.ui_tay_black,
+    var uTStrokeSelectedColor : Int = R.color.ui_tay_black,
+    var uTBgSecondaryColor : Int = R.color.ui_tay_white,
+    var uTStrokeSecondaryColor : Int = R.color.ui_tay_black,
+    var uTBgSecondaryDisableColor : Int = R.color.ui_tay_gray_secondary,
+    var uTStrokeSecondaryDisableColor : Int = R.color.ui_tay_gray,
+    var uTBgSecondarySelectedColor : Int = R.color.ui_tay_black,
+    var uTStrokeSecondarySelectedColor : Int = R.color.ui_tay_white,
+    var uTTextColor: Int = R.color.ui_tay_white,
+    var uTTextColorDisable: Int = R.color.ui_tay_white,
+    var uTTextColorSelected: Int = R.color.ui_tay_white,
+    var uTTextColorSecondary: Int = R.color.ui_tay_black,
+    var uTTextColorDisableSecondary: Int = R.color.ui_tay_gray,
+    var uTTextColorSelectedSecondary: Int = R.color.ui_tay_black,
+    var uTTextFont : Int = R.font.ui_tay_font_button,
+    var uTTintStart: Int = R.color.ui_tay_white,
+    var uTTintEnd : Int = R.color.ui_tay_white,
+    var uTIconStart : Int? = null,
+    var uTIconEnd : Int? = null,
+    var uTTextSize : Int = 20,
+    var uTStrokeWith : Int = 1,
+    var uTRadius : Int = 62)
 
 fun Boolean.utBtnState(selected : Boolean = false)=  if (selected) UTStateCButton.UI_BTN_SELECTED else
         if (this)UTStateCButton.UT_BTN_ENABLE else UTStateCButton.UI_BTN_DISABLE
@@ -47,49 +47,49 @@ fun UiTayButtonModel.uiTayTextColor(type :UTStyleCButton,state : UTStateCButton)
 
 fun UiTayButtonModel.uiTayMStroke(state :UTStateCButton ): Int{
     return when(state){
-        UTStateCButton.UT_BTN_ENABLE ->{uiTayStroke}
-       UTStateCButton.UI_BTN_DISABLE ->{uiTayStrokeDisable}
-      UTStateCButton.UI_BTN_SELECTED ->{uiTayStrokeSelected}
+        UTStateCButton.UT_BTN_ENABLE ->{uTStrokeColor}
+       UTStateCButton.UI_BTN_DISABLE ->{uTStrokeDisableColor}
+      UTStateCButton.UI_BTN_SELECTED ->{uTStrokeSelectedColor}
     }
 }
 
 fun UiTayButtonModel.uiTayMBackground(state :UTStateCButton ): Int{
     return when(state){
-        UTStateCButton.UT_BTN_ENABLE ->{uiTayBackground}
-        UTStateCButton.UI_BTN_DISABLE ->{uiTayBackgroundDisable}
-        UTStateCButton.UI_BTN_SELECTED ->{uiTayBackgroundSelected}
+        UTStateCButton.UT_BTN_ENABLE ->{uTBgColor}
+        UTStateCButton.UI_BTN_DISABLE ->{uTBgDisableColor}
+        UTStateCButton.UI_BTN_SELECTED ->{uTBgSelectedColor}
     }
 }
 
 fun UiTayButtonModel.uiTayMStrokeS(state :UTStateCButton ): Int{
     return when(state){
-        UTStateCButton.UT_BTN_ENABLE ->{uiTayStrokeSecondary}
-        UTStateCButton.UI_BTN_DISABLE ->{uiTayStrokeSecondaryDisable}
-        UTStateCButton.UI_BTN_SELECTED ->{uiTayStrokeSecondarySelected}
+        UTStateCButton.UT_BTN_ENABLE ->{uTStrokeSecondaryColor}
+        UTStateCButton.UI_BTN_DISABLE ->{uTStrokeSecondaryDisableColor}
+        UTStateCButton.UI_BTN_SELECTED ->{uTStrokeSecondarySelectedColor}
     }
 }
 
 fun UiTayButtonModel.uiTayMBackgroundS(state :UTStateCButton ): Int{
     return when(state){
-        UTStateCButton.UT_BTN_ENABLE ->{uiTayBackgroundSecondary}
-        UTStateCButton.UI_BTN_DISABLE ->{uiTayBackgroundSecondaryDisable}
-        UTStateCButton.UI_BTN_SELECTED ->{uiTayBackgroundSecondarySelected}
+        UTStateCButton.UT_BTN_ENABLE ->{uTBgSecondaryColor}
+        UTStateCButton.UI_BTN_DISABLE ->{uTBgSecondaryDisableColor}
+        UTStateCButton.UI_BTN_SELECTED ->{uTBgSecondarySelectedColor}
     }
 }
 
 fun UiTayButtonModel.uiTayMTextS(state :UTStateCButton ): Int{
     return when(state){
-        UTStateCButton.UT_BTN_ENABLE ->{uiTayTextColorSecondary}
-        UTStateCButton.UI_BTN_DISABLE ->{uiTayTextColorDisableSecondary}
-        UTStateCButton.UI_BTN_SELECTED ->{uiTayTextColorSelectedSecondary}
+        UTStateCButton.UT_BTN_ENABLE ->{uTTextColorSecondary}
+        UTStateCButton.UI_BTN_DISABLE ->{uTTextColorDisableSecondary}
+        UTStateCButton.UI_BTN_SELECTED ->{uTTextColorSelectedSecondary}
     }
 }
 
 fun UiTayButtonModel.uiTayMText(state :UTStateCButton ): Int{
     return when(state){
-        UTStateCButton.UT_BTN_ENABLE ->{uiTayTextColor}
-        UTStateCButton.UI_BTN_DISABLE ->{uiTayTextColorDisable}
-        UTStateCButton.UI_BTN_SELECTED ->{uiTayTextColorSelected}
+        UTStateCButton.UT_BTN_ENABLE ->{uTTextColor}
+        UTStateCButton.UI_BTN_DISABLE ->{uTTextColorDisable}
+        UTStateCButton.UI_BTN_SELECTED ->{uTTextColorSelected}
     }
 }
 
