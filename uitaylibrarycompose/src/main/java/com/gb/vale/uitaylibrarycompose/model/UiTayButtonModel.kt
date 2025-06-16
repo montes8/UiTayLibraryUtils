@@ -23,7 +23,7 @@ class UiTayButtonModel (
     var uTTextColorDisableSecondary: Int = R.color.ui_tay_gray,
     var uTTextColorSelectedSecondary: Int = R.color.ui_tay_black,
     var uTTextFont : Int = R.font.ui_tay_font_button,
-    var uTColorIconDefaul: Boolean = false,
+    var uTColorIconDefault: Boolean = false,
     var uTIconStart : Int? = null,
     var uTIconEnd : Int? = null,
     var uTTextSize : Int = 20,
