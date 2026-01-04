@@ -39,12 +39,12 @@ import com.gb.vale.uitaylibrarycompose.model.uiTayBackground
 import com.gb.vale.uitaylibrarycompose.model.uiTayStroke
 import com.gb.vale.uitaylibrarycompose.model.uiTayTextColor
 import com.gb.vale.uitaylibrarycompose.model.utBtnState
-import com.gb.vale.uitaylibrarycompose.utils.UI_TAY_TEXT_DEFAUL
+import com.gb.vale.uitaylibrarycompose.utils.UI_TAY_TEXT_DEFAULT
 import com.gb.vale.uitaylibrarycompose.utils.uiTayNoRippleClickable
 
 
 @Composable
-fun UiTayCButton(uiTayText : String = UI_TAY_TEXT_DEFAUL, uiTayEnable : Boolean = false,
+fun UiTayCButton(uiTayText : String = UI_TAY_TEXT_DEFAULT, uiTayEnable : Boolean = false,
                  uiTayStyleBtn : UTStyleCButton = UTStyleCButton.UI_TAY_PRIMARY,
                  uiTayBtnModel : UiTayButtonModel = UiTayButtonModel(),
                  uiTayClick: () -> Unit

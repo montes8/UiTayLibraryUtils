@@ -19,10 +19,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 import com.gb.vale.uitaylibrarycompose.model.UiTayToolBarModel
-import com.gb.vale.uitaylibrarycompose.utils.UI_TAY_TEXT_DEFAUL
+import com.gb.vale.uitaylibrarycompose.utils.UI_TAY_TEXT_DEFAULT
 
 @Composable
-fun UiTayCToolBar(uiTayText : String = UI_TAY_TEXT_DEFAUL,
+fun UiTayCToolBar(uiTayText : String = UI_TAY_TEXT_DEFAULT,
                   uiTayModifier : UiTayToolBarModel = UiTayToolBarModel(),
                   uiTayClick: (Boolean) -> Unit
 ) {
