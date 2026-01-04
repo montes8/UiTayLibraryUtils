@@ -3,18 +3,17 @@ package com.gb.vale.uitaylibraryutils.ui.theme
 import android.annotation.SuppressLint
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Shapes
-import androidx.compose.material.Typography
-import androidx.compose.material.darkColors
-import androidx.compose.material.lightColors
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Shapes
+import androidx.compose.material3.Typography
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.graphics.Color
 import com.gb.vale.uitaylibraryutils.R
 
 @SuppressLint("ResourceAsColor")
@@ -24,22 +23,21 @@ fun MyApplicationTheme(
     content: @Composable () -> Unit
 ) {
     val colors = if (darkTheme) {
-        darkColors(
+        darkColorScheme(
             primary = Color(R.color.black),
             secondary = Color(R.color.black),
-            secondaryVariant = Color(R.color.black)
+            tertiary = Color(R.color.black)
         )
     } else {
-        lightColors(
+        lightColorScheme(
             primary = Color(R.color.black),
             secondary = Color(R.color.black),
-            secondaryVariant = Color(R.color.black)
+            tertiary = Color(R.color.black)
         )
     }
     val typography = Typography(
-        body1 = TextStyle(
+        bodyLarge = TextStyle(
             fontFamily = FontFamily.Default,
-            fontWeight = FontWeight.Normal,
             fontSize = 16.sp
         )
     )
@@ -50,7 +48,7 @@ fun MyApplicationTheme(
     )
 
     MaterialTheme(
-        colors = colors,
+        colorScheme = colors,
         typography = typography,
         shapes = shapes,
         content = content
